@@ -8,15 +8,22 @@
 <body>
 <h3> Login here </h3>
 <form action="profile.jsp" method="post">
-   First name: <input type ="text" name ="firstName"/>
+   User Name: <input type ="text" name ="username"/>
     <br/><br/>
-   Last name: <input type ="text" name = "LastName"/>
+   Password: <input type ="text" name = "password"/>
     <br/><br/>
     <input type ="submit" value="Submit"/>
 </form>
 </body>
 </html>
 <%
-    String username = request.getParameter("username");
-    String password = request.getParameter("password");
+    if (request.getMethod().equalsIgnoreCase("post")) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (username.equals("admin") && password.equals("password")) {
+            response.sendRedirect("/profile.jsp");
+        }else{
+            response.sendRedirect("/login.jsp");
+        }
+    }
 %>
