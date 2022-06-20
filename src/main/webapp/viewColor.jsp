@@ -1,16 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: icomputer
-  Date: 6/15/22
-  Time: 12:02 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body style="background-color: ${color}">
+<%--<form action="view color" method="POST">--%>
+<%--</form>--%>
+</body>
 </html>
