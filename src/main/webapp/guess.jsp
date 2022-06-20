@@ -1,16 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: icomputer
-  Date: 6/16/22
-  Time: 10:50 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <p>Guess a number between 1 and 3??</p>
+    <form action="/guess" method="POST">
+    <input type="text" name="win" id="win" placeholder="Guess A Number?">
+    <button>Submit Guess</button>
+    </form>
+</body>
 </html>
