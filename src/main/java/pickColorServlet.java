@@ -6,13 +6,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "pickColorServlet", urlPatterns = "/pick color")
+@WebServlet(name = "pickColorServlet", urlPatterns = "/pickcolor")
     public class pickColorServlet extends HttpServlet{
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("viewColor").forward(request, response);
-        response.sendRedirect("viewColor.jsp");
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("pickcolor.jsp").forward(request, response);
+//        response.sendRedirect("viewColor.jsp");
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        response.sendRedirect("color, pickColorServlet");
+        String color = request.getParameter("color");
+        response.sendRedirect("/viewcolor?color=" + color);
+    }
 //        String name = request.getParameter("color");
 //        response.sendRedirect("viewColor");
 //        @Override
@@ -25,5 +31,5 @@ import java.io.IOException;
 //
 //    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
 //    }
-    }
+
 }
