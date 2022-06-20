@@ -17,15 +17,27 @@ public class pizzaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
-        if (request.getMethod().equalsIgnoreCase("post")) {
-            String crust = request.getParameter("crust");
-            String sauce = request.getParameter("sauce");
-            String size = request.getParameter("size");
+            String crust = request.getParameter("crustType");
+            String sauce = request.getParameter("sauceType");
+            String size = request.getParameter("toppings");
+            String[] toppings = request.getParameterValues("topping");
+//            String pepperoni = request.getParameter("pepperoni");
+//            String pineapple = request.getParameter("pineapple");
+//            String italian = request.getParameter("italian");
+            String Submit = request.getParameter("Submit");
             System.out.println(crust);
-        }
+        System.out.println(sauce);
+        System.out.println(size);
+//        System.out.println(pepperoni);
+//        System.out.println(pineapple);
+//        System.out.println(italian);
+        System.out.println(Submit);
 
+        for(String topping : toppings){
+            System.out.println(topping);
+        }
     }
 
-//    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
-//    }
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+    }
 }
